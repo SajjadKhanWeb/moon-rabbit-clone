@@ -10,6 +10,7 @@ const config: Config = {
   description: "Explore Northern Pakistan with Moon Rabbit Tours.",
 
   extends: [vikeReact],
+  prerender: true,
 };
 
 export default config;
