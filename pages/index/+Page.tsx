@@ -7,6 +7,7 @@ import footerMushroomUrl from "../../assets/moon-rabbit-footer-mushroom.png";
 import footerTaglineUrl from "../../assets/moon-rabbit-footer-tagline.png";
 import themePosterUrl from "../../assets/moon-rabbit-theme-poster.png";
 import themeVideoUrl from "../../assets/moon-rabbit-theme.mp4";
+import { MobileMenu } from "../../components/MobileMenu";
 import whatWeDoBackgroundUrl from "../../assets/what-we-do-background.jpg";
 import "./home.css";
 
@@ -69,6 +70,7 @@ export default function Page() {
         </video>
 
         <header className="hero-header">
+          <MobileMenu items={navigation} />
           <a className="brand" href="/" aria-label="Moon Rabbit Tours home">
             <img className="brand-mark" src={logoUrl} alt="Moon Rabbit Tours" />
           </a>

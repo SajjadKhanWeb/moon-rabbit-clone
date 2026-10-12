@@ -4,6 +4,7 @@ import footerMapUrl from "../../assets/moon-rabbit-footer-map.jpg";
 import footerMushroomUrl from "../../assets/moon-rabbit-footer-mushroom.png";
 import footerTaglineUrl from "../../assets/moon-rabbit-footer-tagline.png";
 import { ContactFormSection } from "../../components/ContactFormSection";
+import { MobileMenu } from "../../components/MobileMenu";
 import "../accommodation/accommodation.css";
 
 const navigation = [
@@ -20,6 +21,7 @@ export default function Page() {
     <main className="accommodation-page-content">
       <header className="accommodation-header">
         <div className="accommodation-header-content">
+          <MobileMenu items={navigation} />
           <a
             className="accommodation-brand"
             href="/"

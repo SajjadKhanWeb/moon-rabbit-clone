@@ -49,6 +49,7 @@ import tentOneUrl from "../../assets/tents-1.jpg";
 import tentTwoUrl from "../../assets/tents-2.jpg";
 import tentThreeUrl from "../../assets/tents-3.jpg";
 import tentFourUrl from "../../assets/tents-4.jpg";
+import { MobileMenu } from "../../components/MobileMenu";
 import "./accommodation.css";
 
 const navigation = [
@@ -302,6 +303,7 @@ export default function Page() {
         className="accommodation-header"
       >
         <div className="accommodation-header-content">
+          <MobileMenu items={navigation} />
           <a className="accommodation-brand" href="/" aria-label="Moon Rabbit Tours home">
             <img src={logoUrl} alt="Moon Rabbit Tours" />
           </a>

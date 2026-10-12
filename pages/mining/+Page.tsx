@@ -5,6 +5,7 @@ import teamProspectorUrl from "../../assets/mining-team-prospector.png";
 import teamTechnicianUrl from "../../assets/mining-team-technician.png";
 import miningVideoUrl from "../../assets/mining-tunnel.mp4";
 import miningMapBackgroundUrl from "../../assets/moon-rabbit-footer-map.jpg";
+import { MobileMenu } from "../../components/MobileMenu";
 import "./mining.css";
 
 const navigation = [
@@ -133,6 +134,7 @@ export default function Page() {
         <div className="mining-hero-shade" aria-hidden="true" />
 
         <header className="mining-header">
+          <MobileMenu items={navigation} theme="mining" />
           <a className="mining-brand" href="/mining/" aria-label="Moon Rabbit Mining home">
             <img src={miningLogoUrl} alt="Moon Rabbit Mining" />
           </a>

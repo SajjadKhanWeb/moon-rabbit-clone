@@ -21,6 +21,7 @@ import revoUrl from "../../assets/revo.jpg";
 import vehicleGraphicUrl from "../../assets/vehicle-graphic-20260604-155959.png";
 import vehiclesHeadingUrl from "../../assets/vehicles-heading.png";
 import waterSportsGraphicUrl from "../../assets/water-sports-graphic-20260604-163559.png";
+import { MobileMenu } from "../../components/MobileMenu";
 import "./vehicles.css";
 
 const navigation = [
@@ -171,6 +172,7 @@ export default function Page() {
         className="vehicles-header"
       >
         <div className="vehicles-header-panel">
+          <MobileMenu items={navigation} />
           <a className="vehicles-brand" href="/" aria-label="Moon Rabbit Tours home">
             <img src={logoUrl} alt="Moon Rabbit Tours" />
           </a>

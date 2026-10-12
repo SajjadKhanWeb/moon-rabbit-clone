@@ -14,6 +14,7 @@ import tourGypUrl from "../../assets/tour-gyp.png";
 import tourSkcUrl from "../../assets/tour-skc.png";
 import tourSksUrl from "../../assets/tour-sks.png";
 import tourYahUrl from "../../assets/tour-yah.jpg";
+import { MobileMenu } from "../../components/MobileMenu";
 import "./tours.css";
 
 const navigation = [
@@ -80,6 +81,7 @@ export default function Page() {
       >
         <div className="tours-header-shell">
           <div className="tours-header-panel">
+            <MobileMenu items={navigation} />
             <a
               className="tours-brand"
               href="/"
