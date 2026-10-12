@@ -2,8 +2,42 @@ import "./Layout.css";
 
 import logoUrl from "../assets/logo.svg";
 import { Link } from "../components/Link";
+import { usePageContext } from "vike-react/usePageContext";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
+  const { urlPathname } = usePageContext();
+  const routePathname = urlPathname.replace(/\/+$/, "") || "/";
+
+  if (routePathname === "/mining") {
+    return <>{children}</>;
+  }
+
+  if (
+    routePathname === "/" ||
+    routePathname === "/tour" ||
+    routePathname === "/vehicles" ||
+    routePathname === "/accommodation" ||
+    routePathname === "/contact"
+  ) {
+    return (
+      <div
+        className={
+          routePathname === "/"
+            ? "home-page"
+            : routePathname === "/tour"
+              ? "tour-page"
+              : routePathname === "/vehicles"
+                ? "vehicles-page"
+                : routePathname === "/accommodation"
+                  ? "accommodation-page"
+                  : "contact-page"
+        }
+      >
+        {children}
+      </div>
+    );
+  }
+
   return (
     <div
       style={{

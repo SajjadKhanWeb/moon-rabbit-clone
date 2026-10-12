@@ -6,8 +6,8 @@ import vikeReact from "vike-react/config";
 
 const config: Config = {
   // https://vike.dev/head-tags
-  title: "My Vike App",
-  description: "Demo showcasing Vike",
+  title: "Moon Rabbit Tours",
+  description: "Explore Northern Pakistan with Moon Rabbit Tours.",
 
   extends: [vikeReact],
 };

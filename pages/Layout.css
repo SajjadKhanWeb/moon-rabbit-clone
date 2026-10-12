@@ -27,3 +27,7 @@ body {
 body.page-transition #page-content {
   opacity: 0;
 }
+
+.home-page {
+  min-height: 100vh;
+}

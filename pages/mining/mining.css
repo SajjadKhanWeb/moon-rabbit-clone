@@ -1,0 +1,1274 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600&family=Poppins:wght@400;600&family=Work+Sans:wght@400;600;700&display=swap");
+
+.mining-page {
+  min-height: 100vh;
+  background: #100b08;
+}
+
+.mining-hero {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100svh;
+  overflow: hidden;
+  isolation: isolate;
+  color: #fff;
+  background: #100b08;
+}
+
+.mining-hero-video,
+.mining-hero-shade {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.mining-hero-video {
+  object-fit: cover;
+  object-position: center;
+}
+
+.mining-hero-shade {
+  background: linear-gradient(
+    180deg,
+    rgb(0 0 0 / 38%) 0%,
+    rgb(0 0 0 / 28%) 52%,
+    rgb(0 0 0 / 42%) 100%
+  );
+}
+
+.mining-header {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 44px 24px 0;
+}
+
+.mining-brand {
+  display: block;
+  width: min(230px, 48vw);
+  line-height: 0;
+}
+
+.mining-brand img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.mining-nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 14px 40px;
+  margin-top: 28px;
+}
+
+.mining-nav a {
+  color: #fff;
+  font-family: "Poppins", "Work Sans", sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.4;
+  text-decoration: none;
+  transition: color 180ms ease;
+}
+
+.mining-nav a:hover,
+.mining-nav a:focus-visible {
+  color: #e3b85c;
+}
+
+.mining-maps {
+  position: relative;
+  isolation: isolate;
+  scroll-margin-top: 0;
+  overflow: hidden;
+  padding: 60px clamp(20px, 4vw, 60px) 90px;
+  color: #fff;
+  background-color: #120d09;
+  background-image: url("https://moonrabbit.pk/wp-content/uploads/2023/07/1643468.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.mining-maps::before {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.72);
+  content: "";
+}
+
+.mining-maps-inner {
+  width: min(1180px, 100%);
+  margin: 0 auto;
+}
+
+.mining-maps-heading-wrap,
+.mining-equipment-heading-wrap,
+.mining-team-heading-wrap {
+  text-align: center;
+  margin: 0 0 38px;
+}
+
+.mining-maps-heading-img,
+.mining-equipment-heading-img,
+.mining-team-heading-img {
+  display: inline-block;
+  width: 270px;
+  max-width: 85%;
+  height: auto;
+  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.6));
+}
+
+.mining-zone-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  width: 100%;
+}
+
+.mining-zone-card {
+  min-width: 0;
+  position: relative;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 18px;
+  padding: 14px 14px 22px 14px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mining-zone-card:hover {
+  transform: translateY(-6px);
+  border-color: #ffd700;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 0 0 25px rgba(255, 215, 0, 0.2);
+}
+
+.mining-zone-map-wrap {
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #000;
+}
+
+.mining-zone-map {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1.48 / 1;
+  object-fit: cover;
+  border-radius: 12px;
+  transition: transform 0.4s ease;
+}
+
+.mining-zone-card:hover .mining-zone-map {
+  transform: scale(1.03);
+}
+
+.mining-zone-copy {
+  padding: 18px 8px 6px;
+}
+
+.mining-zone-copy h3 {
+  margin: 0 0 10px;
+  color: #ffffff;
+  font-family: "Poppins", "Work Sans", sans-serif;
+  font-size: 21px;
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -0.2px;
+}
+
+.mining-zone-copy p {
+  margin: 0;
+  color: #e2e2e2;
+  font-family: "Poppins", "Work Sans", sans-serif;
+  font-size: 14.5px;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+/* Lightbox Modal */
+.mining-lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.94);
+  z-index: 99999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  backdrop-filter: blur(6px);
+}
+
+.mining-lightbox-img {
+  max-width: 95%;
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: 10px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.85);
+  border: 1px solid rgba(255, 215, 0, 0.3);
+}
+
+.mining-lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: #ffffff;
+  font-size: 44px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  line-height: 1;
+  transition: color 0.2s;
+}
+
+.mining-lightbox-close:hover {
+  color: #ffd700;
+}
+
+.mining-equipment {
+  position: relative;
+  min-height: 100svh;
+  overflow: hidden;
+  isolation: isolate;
+  color: #fff;
+  background: #000;
+}
+
+.mining-equipment-video,
+.mining-equipment-shade {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.mining-equipment-video {
+  object-fit: cover;
+  object-position: center;
+}
+
+.mining-equipment-shade {
+  background: rgba(0, 0, 0, 0.48);
+}
+
+.mining-equipment-inner {
+  position: relative;
+  display: flex;
+  min-height: 100svh;
+  flex-direction: column;
+  justify-content: space-between;
+  width: min(1380px, 94%);
+  margin: 0 auto;
+  padding: 50px 20px 40px;
+}
+
+.mining-equipment-heading-wrap {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.mining-equipment-heading-img {
+  display: inline-block;
+  width: 270px;
+  max-width: 85%;
+  height: auto;
+  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.6));
+}
+
+.mining-equipment-slide {
+  position: relative;
+  display: grid;
+  flex: 1;
+  grid-template-columns: 1fr 1.35fr;
+  gap: clamp(30px, 5vw, 80px);
+  align-items: flex-end;
+  padding: 0 45px 30px;
+}
+
+.mining-equipment-visual {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.mining-equipment-img-wrap {
+  width: 100%;
+  max-width: 480px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.mining-equipment-img {
+  max-width: 100%;
+  max-height: 380px;
+  object-fit: contain;
+  filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.65));
+}
+
+.mining-equipment-caption {
+  font-family: "Oswald", sans-serif;
+  font-size: 26px;
+  font-weight: 300;
+  color: #ffffff;
+  text-align: center;
+  margin: 16px 0 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.mining-equipment-copy {
+  max-width: 760px;
+  padding: 0 0 20px;
+}
+
+.mining-equipment-copy h2 {
+  margin: 0 0 16px;
+  color: #ffffff;
+  font-family: "Oswald", sans-serif;
+  font-size: clamp(40px, 4.4vw, 56px);
+  font-weight: 400;
+  line-height: 1.1;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.mining-equipment-description {
+  margin: 0;
+  color: #ffffff;
+  font-family: "Oswald", sans-serif;
+  font-size: clamp(16.5px, 1.35vw, 18.5px);
+  font-weight: 300;
+  line-height: 1.68;
+  text-align: justify;
+}
+
+.mining-equipment-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s, opacity 0.2s;
+  z-index: 10;
+  opacity: 0.85;
+}
+
+.mining-equipment-arrow:hover {
+  opacity: 1;
+  transform: translateY(-50%) scale(1.15);
+}
+
+.mining-equipment-arrow-prev {
+  left: -15px;
+}
+
+.mining-equipment-arrow-next {
+  right: -15px;
+}
+
+.mining-equipment-arrow-svg {
+  width: 24px;
+  height: 36px;
+  fill: currentColor;
+}
+
+.mining-equipment-dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.mining-equipment-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  background: transparent;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.2s;
+  padding: 0;
+}
+
+.mining-equipment-dot.active {
+  background: #ffffff;
+  transform: scale(1.25);
+}
+
+.mining-equipment-arrow:hover,
+.mining-equipment-arrow:focus-visible {
+  color: #17110d;
+  background: #d9b877;
+}
+
+.mining-team {
+  min-height: 100vh;
+  padding: 24px clamp(20px, 4.9vw, 80px) 64px;
+  color: #f7f7f7;
+  background: #030303;
+}
+
+.mining-team-inner {
+  width: min(1480px, 100%);
+  margin: 0 auto;
+}
+
+.mining-team h1 {
+  position: relative;
+  width: fit-content;
+  margin: 0 auto 42px;
+  padding: 3px 29px 8px;
+  border: 2px solid #302013;
+  border-radius: 7px 13px 6px 10px;
+  color: #29180c;
+  background:
+    radial-gradient(ellipse at 20% 30%, rgb(255 224 164 / 27%), transparent 30%),
+    repeating-linear-gradient(2deg, transparent 0 8px, rgb(65 38 17 / 13%) 9px 11px),
+    linear-gradient(180deg, #b18a5a, #785333 48%, #a67b4d);
+  box-shadow:
+    0 8px 18px rgb(0 0 0 / 62%),
+    inset 0 2px 3px rgb(255 235 192 / 48%),
+    inset 0 -4px 5px rgb(51 29 13 / 66%);
+  clip-path: polygon(2% 8%, 12% 5%, 17% 1%, 34% 4%, 49% 0, 68% 4%, 86% 1%, 98% 7%, 96% 19%, 100% 28%, 97% 39%, 100% 49%, 97% 60%, 99% 72%, 96% 84%, 99% 94%, 82% 98%, 63% 95%, 45% 100%, 27% 96%, 12% 99%, 3% 93%, 5% 78%, 1% 66%, 4% 53%, 0 40%, 4% 27%);
+  font-family: "Oswald", "Arial Narrow", sans-serif;
+  font-size: clamp(40px, 5vw, 66px);
+  font-weight: 500;
+  line-height: 1.25;
+  text-align: center;
+  text-shadow: 0 1px 0 rgb(255 222 170 / 42%), 0 2px 2px rgb(0 0 0 / 48%);
+}
+
+.mining-team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(20px, 2vw, 34px);
+}
+
+.mining-team-card {
+  min-width: 0;
+  overflow: hidden;
+  border-radius: 17px 17px 0 0;
+  background: #0c0c0c;
+}
+
+.mining-team-portrait {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1.16;
+  object-fit: cover;
+  filter: grayscale(1) brightness(0.8);
+  background: #bdbdbd;
+}
+
+.mining-team-copy {
+  min-height: 205px;
+  padding: 25px 26px 32px;
+}
+
+.mining-team-copy h2 {
+  margin: 0 0 25px;
+  color: #f8f8f8;
+  font-family: "Poppins", "Work Sans", Arial, sans-serif;
+  font-size: clamp(19px, 1.65vw, 27px);
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.mining-team-copy p {
+  margin: 0;
+  color: #c2c2c2;
+  font-family: "Work Sans", Arial, sans-serif;
+  font-size: clamp(15px, 1.25vw, 19px);
+  line-height: 1.65;
+}
+
+.mining-methodology {
+  position: relative;
+  isolation: isolate;
+  scroll-margin-top: 0;
+  overflow: hidden;
+  padding: 60px clamp(20px, 4vw, 60px) 90px;
+  color: #fff;
+  background-color: #0b0806;
+  background-image: url("https://moonrabbit.pk/wp-content/uploads/2026/05/photo-1526778548025-fa2f459cd5c1.avif");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.mining-methodology::before {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.78);
+  content: "";
+}
+
+.mining-methodology-inner {
+  width: min(1140px, 100%);
+  margin: 0 auto;
+}
+
+.mining-methodology-heading-wrap {
+  text-align: center;
+  margin: 0 0 38px;
+}
+
+.mining-methodology-heading-img {
+  display: inline-block;
+  width: 270px;
+  max-width: 85%;
+  height: auto;
+  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.6));
+}
+
+.method-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+  width: 100%;
+}
+
+.method-card {
+  position: relative;
+  background: rgba(0, 0, 0, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 15px;
+  padding: 30px 28px;
+  overflow: hidden;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.method-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("https://www.goldmapsonline.com/wp-content/uploads/2017/02/NVProspectingMap1.png") center/cover no-repeat;
+  opacity: 0.25;
+  filter: grayscale(100%) contrast(1.2) brightness(0.6);
+  transform: scale(1.1);
+  pointer-events: none;
+}
+
+.method-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  pointer-events: none;
+}
+
+.method-content {
+  position: relative;
+  z-index: 2;
+}
+
+.step {
+  color: #ffd700;
+  font-size: 13px;
+  font-weight: 500;
+  font-family: "Poppins", "Work Sans", sans-serif;
+  margin-bottom: 12px;
+  display: inline-block;
+  border: 1px solid rgba(255, 215, 0, 0.35);
+  padding: 4px 12px;
+  border-radius: 20px;
+  background: rgba(255, 215, 0, 0.08);
+}
+
+.method-content h3 {
+  color: #ffffff;
+  margin: 0 0 12px;
+  font-size: 22px;
+  font-weight: 700;
+  font-family: "Poppins", "Work Sans", sans-serif;
+  letter-spacing: -0.01em;
+}
+
+.method-content p {
+  color: #cccccc;
+  font-size: 14.5px;
+  line-height: 1.6;
+  margin: 0;
+  font-family: "Poppins", "Work Sans", sans-serif;
+}
+
+.method-card:hover {
+  transform: translateY(-6px);
+  border-color: gold;
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.18);
+}
+
+.method-card:nth-child(4),
+.method-card.featured {
+  border-color: gold;
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.25);
+}
+
+.method-card:nth-child(4)::before,
+.method-card.featured::before {
+  opacity: 0.35;
+  filter: grayscale(80%) contrast(1.3) brightness(0.7);
+}
+
+@media (max-width: 900px) {
+  .method-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+.mining-investment {
+  position: relative;
+  isolation: isolate;
+  scroll-margin-top: 0;
+  overflow: hidden;
+  padding: 65px clamp(20px, 4vw, 60px) 95px;
+  color: #fff;
+  background-color: #000000;
+}
+
+.mining-investment-inner {
+  width: min(1140px, 100%);
+  margin: 0 auto;
+}
+
+.mining-investment-heading-wrap {
+  text-align: center;
+  margin: 0 0 38px;
+}
+
+.mining-investment-heading-img {
+  display: inline-block;
+  width: 270px;
+  max-width: 85%;
+  height: auto;
+  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.6));
+}
+
+.invest-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  width: 100%;
+}
+
+.invest-card {
+  position: relative;
+  background: rgba(0, 0, 0, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 15px;
+  padding: 34px 28px;
+  overflow: hidden;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.invest-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("https://www.goldmapsonline.com/wp-content/uploads/2017/02/NVProspectingMap1.png") center/cover no-repeat;
+  opacity: 0.25;
+  filter: grayscale(100%) contrast(1.2) brightness(0.6);
+  transform: scale(1.1);
+  pointer-events: none;
+}
+
+.invest-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  pointer-events: none;
+}
+
+.invest-content {
+  position: relative;
+  z-index: 2;
+}
+
+.invest-content h3 {
+  color: #ffffff;
+  font-size: 22px;
+  font-weight: 700;
+  font-family: "Poppins", "Work Sans", sans-serif;
+  margin: 0 0 16px;
+  line-height: 1.3;
+}
+
+.invest-content p {
+  color: #cccccc;
+  font-size: 14.5px;
+  line-height: 1.65;
+  margin: 0;
+  font-family: "Poppins", "Work Sans", sans-serif;
+}
+
+.invest-card:hover {
+  border-color: gold;
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.25);
+  transform: translateY(-6px);
+}
+
+@media (max-width: 900px) {
+  .invest-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+/* =========================================
+   Contact Section
+========================================= */
+.mining-contact {
+  position: relative;
+  isolation: isolate;
+  scroll-margin-top: 0;
+  overflow: hidden;
+  padding: 75px clamp(20px, 5vw, 80px) 110px;
+  color: #fff;
+  background-color: #0c0806;
+  background-image: url("https://moonrabbit.pk/wp-content/uploads/2026/05/pexels-i-love-pixel-391111544-14747539-scaled.jpg");
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.mining-contact::before {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background:
+    linear-gradient(305deg, rgba(0, 0, 0, 0) 15%, rgba(0, 0, 0, 0.9) 100%),
+    linear-gradient(180deg, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0.75) 100%);
+  content: "";
+}
+
+.mining-contact-inner {
+  width: min(1300px, 100%);
+  margin: 0 auto;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.mining-contact-content {
+  width: min(580px, 100%);
+}
+
+.mining-contact-heading-wrap {
+  margin-bottom: 35px;
+}
+
+.mining-contact-heading-img {
+  display: block;
+  width: 210px;
+  max-width: 80%;
+  height: auto;
+  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.6));
+}
+
+.mining-contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.mining-form-row-dual {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.mining-form-row {
+  display: flex;
+  flex-direction: column;
+}
+
+.mining-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.mining-form-group label {
+  color: #ffffff;
+  font-family: "Poppins", "Work Sans", sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.mining-required {
+  color: #ff4a52;
+  margin-left: 3px;
+}
+
+.mining-form-group input,
+.mining-form-group textarea {
+  width: 100%;
+  box-sizing: border-box;
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 14px;
+  padding: 13px 18px;
+  color: #ffffff;
+  font-family: "Poppins", "Work Sans", sans-serif;
+  font-size: 14.5px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.mining-form-group input:focus,
+.mining-form-group textarea:focus {
+  border-color: #ffd700;
+  box-shadow: 0 0 14px rgba(255, 215, 0, 0.25);
+  background: rgba(0, 0, 0, 0.7);
+  outline: none;
+}
+
+.mining-form-group input::placeholder,
+.mining-form-group textarea::placeholder {
+  color: rgba(255, 255, 255, 0.42);
+}
+
+.mining-form-group textarea {
+  min-height: 130px;
+  resize: vertical;
+}
+
+/* hCaptcha Box */
+.mining-captcha-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 290px;
+  max-width: 100%;
+  background: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  padding: 10px 14px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+  margin-top: 4px;
+}
+
+.mining-captcha-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.mining-captcha-checkbox {
+  width: 26px;
+  height: 26px;
+  border: 2px solid #c1c7cd;
+  border-radius: 3px;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0;
+  transition: border-color 0.15s ease;
+}
+
+.mining-captcha-checkbox:hover {
+  border-color: #0ea5e9;
+}
+
+.mining-captcha-checkbox.checked {
+  border-color: #0ea5e9;
+}
+
+.mining-captcha-label {
+  color: #222222;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  user-select: none;
+}
+
+.mining-captcha-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  line-height: 1;
+  gap: 2px;
+}
+
+.mining-captcha-title {
+  color: #555555;
+  font-size: 10px;
+  font-weight: 600;
+  font-family: sans-serif;
+}
+
+.mining-captcha-links {
+  color: #888888;
+  font-size: 8px;
+  font-family: sans-serif;
+}
+
+/* Submit Button */
+.mining-form-submit-wrap {
+  margin-top: 6px;
+}
+
+.mining-form-submit-btn {
+  background-color: #ffffff;
+  color: #000000;
+  font-family: "Poppins", "Work Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  border: none;
+  border-radius: 9999px;
+  padding: 13px 44px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  display: inline-block;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+}
+
+.mining-form-submit-btn:hover {
+  background-color: #ffd700;
+  color: #000000;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(255, 215, 0, 0.35);
+}
+
+.mining-form-success {
+  background: rgba(0, 0, 0, 0.7);
+  border: 1px solid #ffd700;
+  border-radius: 14px;
+  padding: 24px;
+  text-align: center;
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.2);
+}
+
+.mining-form-success h3 {
+  color: #ffd700;
+  font-family: "Poppins", "Work Sans", sans-serif;
+  font-size: 20px;
+  margin: 0 0 10px;
+}
+
+.mining-form-success p {
+  color: #ffffff;
+  font-family: "Poppins", "Work Sans", sans-serif;
+  font-size: 15px;
+  margin: 0;
+}
+
+/* =========================================
+   Mining Footer
+========================================= */
+.mining-footer {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background-color: #000000;
+  background-image: url("https://moonrabbit.pk/wp-content/uploads/2026/06/360_F_84221257_rfefWUrMTssPWFD16GSArJaLodR3sO8a.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 38px clamp(20px, 5vw, 80px);
+}
+
+.mining-footer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: -1;
+}
+
+.mining-footer-inner {
+  width: min(1300px, 100%);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.mining-footer-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.mining-footer-badge {
+  width: 105px;
+  max-width: 40vw;
+  height: auto;
+  display: block;
+}
+
+.mining-footer-quote {
+  width: 320px;
+  max-width: 80vw;
+  height: auto;
+  display: block;
+}
+
+.mining-footer-right {
+  display: flex;
+  align-items: center;
+}
+
+.mining-footer-mushroom {
+  width: 65px;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.mining-footer-mushroom:hover {
+  transform: scale(1.12) rotate(4deg);
+}
+
+@media (max-width: 640px) {
+  .mining-header {
+    padding: 44px 20px 0;
+  }
+
+  .mining-brand {
+    width: min(190px, 54vw);
+  }
+
+  .mining-nav {
+    max-width: 420px;
+    gap: 12px 22px;
+    margin-top: 18px;
+  }
+
+  .mining-nav a {
+    font-size: 14px;
+  }
+
+  .mining-zone-grid {
+    width: 100%;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 18px;
+  }
+
+  .mining-maps-heading-img {
+    width: 220px;
+  }
+
+  .mining-zone-copy {
+    min-height: 0;
+    padding: 16px 8px 6px;
+  }
+
+  .mining-zone-copy h3 {
+    font-size: 20px;
+  }
+
+  .mining-zone-copy p {
+    font-size: 17px;
+  }
+
+  .mining-equipment {
+    min-height: auto;
+  }
+
+  .mining-equipment-inner {
+    min-height: auto;
+    padding: 40px 16px 30px;
+  }
+
+  .mining-equipment-heading-img {
+    width: 220px;
+  }
+
+  .mining-equipment-slide {
+    min-height: auto;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 0 10px 10px;
+  }
+
+  .mining-equipment-img {
+    max-height: 240px;
+  }
+
+  .mining-equipment-caption {
+    font-size: 20px;
+    margin-top: 10px;
+  }
+
+  .mining-equipment-copy {
+    padding: 0;
+  }
+
+  .mining-equipment-copy h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  .mining-equipment-description {
+    font-size: 15px;
+    line-height: 1.6;
+    text-align: left;
+  }
+
+  .mining-equipment-arrow {
+    top: 35%;
+  }
+
+  .mining-equipment-arrow-prev {
+    left: -5px;
+  }
+
+  .mining-equipment-arrow-next {
+    right: -5px;
+  }
+
+
+  .mining-team {
+    min-height: 0;
+    padding: 28px 20px 42px;
+  }
+
+  .mining-team h1 {
+    margin-bottom: 28px;
+  }
+
+  .mining-team-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+  }
+
+  .mining-team-portrait {
+    aspect-ratio: 1.16;
+  }
+
+  .mining-team-copy {
+    min-height: 0;
+    padding: 22px 20px 26px;
+  }
+
+  .mining-team-copy h2 {
+    margin-bottom: 14px;
+    font-size: 22px;
+  }
+
+  .mining-team-copy p {
+    font-size: 16px;
+  }
+
+  .mining-methodology {
+    padding: 38px 16px 54px;
+  }
+
+  .mining-methodology-heading-wrap {
+    margin-bottom: 24px;
+  }
+
+  .mining-methodology-heading-img {
+    width: 220px;
+  }
+
+  .method-card {
+    padding: 24px 20px;
+  }
+
+  .method-content h3 {
+    font-size: 20px;
+  }
+
+  .mining-investment {
+    padding: 38px 16px 54px;
+  }
+
+  .mining-investment-heading-wrap {
+    margin-bottom: 24px;
+  }
+
+  .mining-investment-heading-img {
+    width: 220px;
+  }
+
+  .invest-card {
+    padding: 24px 20px;
+  }
+
+  .invest-content h3 {
+    font-size: 20px;
+  }
+
+  .mining-contact {
+    padding: 45px 18px 65px;
+  }
+
+  .mining-contact-heading-wrap {
+    margin-bottom: 24px;
+  }
+
+  .mining-contact-heading-img {
+    width: 180px;
+  }
+
+  .mining-form-row-dual {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .mining-contact-form {
+    gap: 16px;
+  }
+
+  .mining-form-submit-btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .mining-footer {
+    padding: 30px 20px;
+  }
+
+  .mining-footer-inner {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .mining-footer-left {
+    align-items: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mining-equipment-video {
+    display: none;
+  }
+
+  .mining-equipment-arrow {
+    transition: none;
+  }
+}

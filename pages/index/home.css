@@ -1,0 +1,485 @@
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100svh;
+  overflow: hidden;
+  isolation: isolate;
+  color: #f5f5f5;
+  background: #000;
+}
+
+.hero-video {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+.home-page {
+  background: #000;
+}
+
+.hero-header {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 24px 0;
+}
+
+.brand {
+  display: block;
+  width: fit-content;
+  line-height: 0;
+  text-decoration: none;
+}
+
+.brand-mark {
+  display: block;
+  width: min(260px, 45vw);
+  height: auto;
+}
+
+.hero-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 18px clamp(24px, 2.6vw, 42px);
+  margin-top: 0;
+}
+
+.hero-nav a {
+  color: #f5f5f5;
+  font-size: clamp(14px, 1.1vw, 18px);
+  font-weight: 600;
+  line-height: 1.4;
+  text-decoration: none;
+  transition: color 180ms ease;
+}
+
+.hero-nav a:hover,
+.hero-nav .nav-featured {
+  color: #f0ca00;
+}
+
+.what-we-do {
+  display: flex;
+  min-height: min(92vh, 760px);
+  align-items: center;
+  justify-content: center;
+  padding: 64px clamp(28px, 8vw, 150px);
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.55);
+  background-position: bottom center;
+  background-size: cover;
+  background-blend-mode: multiply;
+}
+
+.what-we-do-inner {
+  display: grid;
+  width: min(100%, 1440px);
+  grid-template-columns: minmax(300px, 0.82fr) minmax(0, 2.18fr);
+  align-items: center;
+  column-gap: clamp(44px, 5vw, 96px);
+}
+
+.what-we-do h1 {
+  margin: 0;
+  font-family: "Arial Narrow", "Liberation Sans Narrow", sans-serif;
+  font-size: clamp(48px, 3.9vw, 72px);
+  font-stretch: condensed;
+  font-weight: 300;
+  letter-spacing: -0.045em;
+  line-height: 1.1;
+}
+
+.what-we-do-copy {
+  font-family: "Arial Narrow", "Liberation Sans Narrow", sans-serif;
+  font-size: clamp(19px, 1.48vw, 27px);
+  font-stretch: condensed;
+  font-weight: 400;
+  line-height: 1.75;
+}
+
+.what-we-do-copy p {
+  margin: 0;
+}
+
+.what-we-do-copy p + p {
+  margin-top: 28px;
+}
+
+.mountains {
+  overflow: hidden;
+  padding: 70px 0 90px;
+  color: #f5f5f5;
+  background: #000;
+}
+
+.mountains h2 {
+  margin: 0 24px 56px;
+  font-family: "Arial Narrow", "Liberation Sans Narrow", sans-serif;
+  font-size: clamp(38px, 4vw, 64px);
+  font-stretch: condensed;
+  font-weight: 300;
+  letter-spacing: -0.045em;
+  line-height: 1.1;
+  text-align: center;
+}
+
+.mountains-carousel {
+  position: relative;
+  perspective: 1400px;
+}
+
+.mountains-track {
+  display: grid;
+  grid-auto-columns: calc((100% - 120px) / 4);
+  grid-auto-flow: column;
+  gap: 40px;
+  overflow-x: auto;
+  padding: 0 3.1% 30px;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+
+.mountains-track::-webkit-scrollbar {
+  display: none;
+}
+
+.mountain-card {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 0.78;
+  border: 1px solid rgb(255 255 255 / 12%);
+  border-radius: 9px;
+  background: #101010;
+  box-shadow:
+    0 26px 48px rgb(0 0 0 / 55%),
+    0 10px 22px rgb(0 0 0 / 38%),
+    inset 0 1px 0 rgb(255 255 255 / 18%);
+  scroll-snap-align: start;
+  transform: translateZ(0);
+  transition:
+    transform 350ms ease,
+    box-shadow 350ms ease;
+}
+
+.mountain-card::after {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: inset 0 0 0 1px rgb(255 255 255 / 12%);
+  content: "";
+  pointer-events: none;
+}
+
+.mountain-card img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.mountain-card:hover {
+  box-shadow:
+    0 34px 58px rgb(0 0 0 / 62%),
+    0 14px 30px rgb(0 0 0 / 45%),
+    inset 0 1px 0 rgb(255 255 255 / 18%);
+  transform: translateY(-10px) rotateY(-2deg) scale(1.015);
+}
+
+.mountains-arrow {
+  position: absolute;
+  z-index: 1;
+  top: 42%;
+  display: grid;
+  width: 66px;
+  height: 66px;
+  place-items: center;
+  border: 1px solid rgb(255 255 255 / 10%);
+  border-radius: 50%;
+  color: #fff;
+  background: rgb(22 18 15 / 88%);
+  cursor: pointer;
+  transition:
+    background-color 180ms ease,
+    transform 180ms ease;
+}
+
+.mountains-arrow:hover {
+  background: #302820;
+  transform: scale(1.08);
+}
+
+.mountains-arrow span {
+  margin-top: -5px;
+  font-family: Arial, sans-serif;
+  font-size: 46px;
+  font-weight: 300;
+  line-height: 1;
+}
+
+.mountains-arrow-previous {
+  left: 24px;
+}
+
+.mountains-arrow-next {
+  right: 24px;
+}
+
+.our-theme {
+  padding: 44px 24px 72px;
+  color: #f5f5f5;
+  background: #000;
+}
+
+.our-theme h2 {
+  margin: 0 0 38px;
+  font-family: "Arial Narrow", "Liberation Sans Narrow", sans-serif;
+  font-size: clamp(38px, 4vw, 64px);
+  font-stretch: condensed;
+  font-weight: 300;
+  letter-spacing: -0.045em;
+  line-height: 1.1;
+  text-align: center;
+}
+
+.our-theme-video {
+  display: block;
+  width: 1025px;
+  max-width: 100%;
+  aspect-ratio: 1025 / 578;
+  margin: 0 auto;
+  border-radius: 12px;
+  background: #000;
+  object-fit: contain;
+}
+
+.home-footer {
+  position: relative;
+  display: flex;
+  min-height: 218px;
+  align-items: stretch;
+  justify-content: space-between;
+  overflow: hidden;
+  padding: 20px 10px 10px;
+  box-sizing: border-box;
+  background-color: #17110d;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.home-footer::before {
+  position: absolute;
+  inset: 0;
+  background: rgb(0 0 0 / 52%);
+  content: "";
+  pointer-events: none;
+}
+
+.home-footer-brand,
+.home-footer-link {
+  position: relative;
+  z-index: 1;
+}
+
+.home-footer-brand {
+  display: flex;
+  width: 31%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-footer-logo {
+  display: block;
+  width: 161px;
+  max-width: 60%;
+  height: auto;
+  margin-bottom: -8px;
+}
+
+.home-footer-tagline {
+  display: block;
+  width: 79%;
+  height: auto;
+}
+
+.home-footer-link {
+  display: flex;
+  width: 68%;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.home-footer-link a {
+  display: block;
+  width: 80px;
+  height: 125px;
+}
+
+.home-footer-link img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+@media (max-width: 760px) {
+  .hero-video {
+    object-fit: cover;
+    object-position: 55% center;
+  }
+
+  .hero-header {
+    padding-top: 35px;
+  }
+
+  .brand-mark {
+    width: min(200px, 50vw);
+  }
+
+  .hero-nav {
+    max-width: 560px;
+    column-gap: 22px;
+    margin-top: 0;
+  }
+
+  .mountains {
+    padding: 56px 0 64px;
+  }
+
+  .mountains h2 {
+    margin: 0 20px 34px;
+  }
+
+  .mountains-track {
+    grid-auto-columns: 78vw;
+    gap: 18px;
+    padding-right: 11vw;
+    padding-left: 6vw;
+  }
+
+  .mountains-arrow {
+    width: 48px;
+    height: 48px;
+  }
+
+  .mountains-arrow span {
+    font-size: 36px;
+  }
+
+  .mountains-arrow-previous {
+    left: 10px;
+  }
+
+  .mountains-arrow-next {
+    right: 10px;
+  }
+
+  .our-theme {
+    padding: 40px 20px 56px;
+  }
+
+  .our-theme h2 {
+    margin-bottom: 28px;
+  }
+
+  .our-theme-video {
+    border-radius: 9px;
+  }
+
+  .home-footer {
+    min-height: 150px;
+    padding: 20px 10px 10px;
+  }
+
+  .home-footer-brand {
+    width: 73%;
+    align-items: flex-start;
+  }
+
+  .home-footer-logo {
+    width: 60%;
+    max-width: 204px;
+    margin-bottom: -22px;
+  }
+
+  .home-footer-tagline {
+    width: 79%;
+  }
+
+  .home-footer-link {
+    width: 26%;
+    justify-content: center;
+  }
+
+  .home-footer-link a {
+    width: 60px;
+    height: 125px;
+  }
+}
+
+@media (max-width: 420px) {
+  .hero-header {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
+  .hero-nav {
+    column-gap: 16px;
+  }
+
+  .hero-nav a {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 900px) {
+  .what-we-do {
+    min-height: auto;
+    padding: 72px 28px;
+  }
+
+  .what-we-do-inner {
+    grid-template-columns: 1fr;
+    row-gap: 28px;
+  }
+
+  .what-we-do h1 {
+    font-size: clamp(44px, 9vw, 64px);
+  }
+
+  .what-we-do-copy {
+    font-size: clamp(18px, 2.8vw, 22px);
+    line-height: 1.65;
+  }
+
+  .what-we-do-copy p + p {
+    margin-top: 22px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-nav a {
+    transition: none;
+  }
+
+  .mountains-track {
+    scroll-behavior: auto;
+  }
+
+  .mountain-card,
+  .mountains-arrow {
+    transition: none;
+  }
+}
